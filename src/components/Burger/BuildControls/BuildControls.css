@@ -10,11 +10,11 @@
 }
 
 .OrderButton {
-    background-color: #DAD735;
+    background-color: rgb(218, 180, 53);
     outline: none;
     cursor: pointer;
     border: 1px solid #966909;
-    color: #966909;
+    color: #523c0c;
     font-family: inherit;
     font-size: 1.2em;
     padding: 15px 30px;
