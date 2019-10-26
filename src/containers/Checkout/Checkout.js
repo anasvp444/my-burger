@@ -16,14 +16,14 @@ class Checkout extends Component {
         let price = 0;
         for (let param of query.entries()) {
             if (param[0] === "price") {
-                price = param
+                price = param[1]
             }
             else {
                 ingredients[param[0]] = +param[1];
             }
 
         }
-        this.setState({ ingredients: ingredients, totalPrice: price })
+        this.setState({ ingredients: ingredients, price: price })
 
     }
 
@@ -45,7 +45,7 @@ class Checkout extends Component {
                     render={(props) => (
                         <ContactData
                             ingredients={this.state.ingredients}
-                            totalPrice={this.state.price}
+                            price={this.state.price}
                             {...props}
                         />
                     )} />
