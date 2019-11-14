@@ -28,7 +28,6 @@ export const purchaseBurgerStart = () => {
 }
 
 export const purchaseBurger = (orderData, token) => {
-    console.log(token)
     return dispatch => {
         dispatch(purchaseBurgerStart())
         axios.post('/orders.json?auth=' + token, orderData)

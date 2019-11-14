@@ -3,7 +3,6 @@ import axios from 'axios';
 
 
 export const authStart = () => {
-    console.log('authS')
     return (
         {
             type: actionTypes.AUTH_START,
@@ -64,7 +63,6 @@ export const auth = (email, password, isSignUp) => {
         }
         axios.post(url, authData)
             .then(response => {
-                console.log(response)
                 const expireDate = new Date(new Date().getTime() + response.data.expiresIn * 1000)
                 localStorage.setItem('idToken', response.data.idToken)
                 localStorage.setItem('expireDate', expireDate)
@@ -73,7 +71,6 @@ export const auth = (email, password, isSignUp) => {
                 dispatch(checkAuthTimeout(response.data.expiresIn))
             })
             .catch(err => {
-                console.log(err.response)
                 dispatch(authFail(err.response.data.error))
             })
 

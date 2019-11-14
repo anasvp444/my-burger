@@ -110,7 +110,6 @@ class ContactData extends Component {
             orderDetails,
             userId: this.props.userId
         }
-        console.log(this.props.token)
         this.props.onOrderBurger(order, this.props.token);
 
     }
